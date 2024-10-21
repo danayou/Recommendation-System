@@ -107,7 +107,7 @@ def location():
 
     return render_template('location.html', customer_id=cid, location=loc)
 
-#location results
+#year results
 @app.route('/year', methods=['POST'])
 def year():
     cid = request.form.get('customer_id')
