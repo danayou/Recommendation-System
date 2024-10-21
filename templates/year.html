@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="flexbox">
+        <div class="search">
+            <h1>Year Joined</h1>
+            <h3>The year your customer "{{ customer_id }}" joined Partscity:</h3>
+            {% if year %}
+                <p>{{ year }}</p>
+            {% else %}
+                <p>No results found for your search.</p>
+            {% endif %}
+            <a href="{{ url_for('index') }}">Back to Search</a>
+        </div>
+    </div>
+</body>
+</html>

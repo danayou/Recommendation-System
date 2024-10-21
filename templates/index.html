@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Page</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="flexbox">
+        <div class="search">
+            <h1>Partscity Product Recommendation</h1>
+
+            <!-- Add a break space here -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <!-- Search Box for Product Recommendations -->
+            <h3>Enter your Customer's ID for item suggestions:</h3>
+            <form action="/search" method="POST">
+                <div>
+                    <input type="text" name="search_query" placeholder="Customer ID . . ." required>
+                    <button type="submit">Search</button>
+                </div>
+            </form>
+
+            <!-- Add a break space here -->
+            <br>
+            <br>
+
+            <!-- Search Box for Purchase History -->
+            <h3>Search purchase history:</h3>
+            <form action="/history" method="POST">
+                <div>
+                    <input type="text" name="customer_id" placeholder="Customer ID . . ." required>
+                    <button type="submit">Get History</button>
+                </div>
+            </form>
+
+            <!-- Add a break space here -->
+            <br>
+            <br>
+
+            <!-- Search Box for Return History -->
+            <h3>Search return history:</h3>
+            <form action="/returns" method="POST">
+                <div>
+                    <input type="text" name="customer_id" placeholder="Customer ID . . ." required>
+                    <button type="submit">Get Returns</button>
+                </div>
+            </form>
+
+            <!-- Add a break space here -->
+            <br>
+            <br>
+
+            <!-- Search Box for Return History -->
+            <h3>Search location:</h3>
+            <form action="/location" method="POST">
+                <div>
+                    <input type="text" name="customer_id" placeholder="Customer ID . . ." required>
+                    <button type="submit">Get Location</button>
+                </div>
+            </form>
+
+            <!-- Add a break space here -->
+            <br>
+            <br>
+
+            <!-- Search Box for Return History -->
+            <h3>Search year joined:</h3>
+            <form action="/year" method="POST">
+                <div>
+                    <input type="text" name="customer_id" placeholder="Customer ID . . ." required>
+                    <button type="submit">Get Year</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</body>
+</html>
