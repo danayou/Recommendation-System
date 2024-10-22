@@ -25,7 +25,7 @@ returned_df = returns_df.groupby(['CUSTOMER_ID', 'Product_Name']).agg({
 }).reset_index()
 returned_df.rename(columns={'Sales_Order_Quantity': 'Returns'}, inplace=True)
 
-result_df = df.groupby(['CUSTOMER_ID', 'Product_Name', 'Purchase_or_Return'], as_index=False).agg({
+result_df = df.groupby(['CUSTOMER_ID', 'Product_Name', 'Purchase_or_Return', 'Location'], as_index=False).agg({
     'Sales_Order_Quantity': 'sum',
     'Single_Margin': 'mean'}
 )
@@ -103,9 +103,9 @@ def return_history():
 @app.route('/location', methods=['POST'])
 def location():
     cid = request.form.get('customer_id')
-    loc = df[df['CUSTOMER_ID'] == cid]['Location'][0]
+    location = df[df['CUSTOMER_ID'] == cid]['Location'].values[0]
 
-    return render_template('location.html', customer_id=cid, location=loc)
+    return render_template('location.html', customer_id=cid, location=location)
 
 #year results
 @app.route('/year', methods=['POST'])
